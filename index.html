@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tết Trung Thu - Rằm Tháng Tám</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0f1c3f; 
+            --accent-color: #ff9800;  
+            --bg-cream: #fffdf5;      
+            --text-dark: #333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            height: 90vh;
+            background: radial-gradient(circle at center, #1e3c72, #0f1c3f);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moon {
+            width: 120px;
+            height: 120px;
+            background: #ffeb3b;
+            border-radius: 50%;
+            box-shadow: 0 0 40px #ffeb3b, 0 0 80px #ff9800;
+            margin-bottom: 20px;
+            animation: moonGlow 3s infinite alternate;
+        }
+
+        @keyframes moonGlow {
+            from { box-shadow: 0 0 20px #ffeb3b, 0 0 40px #ff9800; }
+            to { box-shadow: 0 0 50px #ffeb3b, 0 0 100px #ff9800; transform: scale(1.05); }
+        }
+
+        .hero h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5rem;
+            color: var(--accent-color);
+            text-shadow: 2px 2px 10px rgba(255, 152, 0, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #eee;
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 15px 0;
+        }
+
+        nav ul li { margin: 0 20px; }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #fff;
+            text-shadow: 0 0 5px var(--accent-color);
+        }
+
+        section { padding: 60px 0; }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .intro-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .intro-img {
+            flex: 1;
+            box-shadow: 10px 10px 0px var(--accent-color);
+            border-radius: 8px;
+        }
+
+        .intro-text {
+            flex: 1;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Tăng chiều cao thẻ card ở phần Hương vị để ảnh trông đẹp hơn */
+        #banh-trung-thu .card {
+            min-height: 480px; 
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .card img {
+            height: 250px; /* Cố định chiều cao ảnh để các card đều nhau */
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            padding: 15px;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+        }
+
+        .card p {
+            padding: 0 15px 20px;
+            color: #666;
+            flex-grow: 1; /* Đẩy nội dung lấp đầy khoảng trống */
+        }
+
+        .meaning-item {
+            display: flex;
+            margin-bottom: 40px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            align-items: center;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .meaning-item:nth-child(even) {
+            flex-direction: row-reverse;
+            border-left: none;
+            border-right: 5px solid var(--primary-color);
+        }
+
+        .meaning-img {
+            flex: 1;
+            max-width: 40%;
+        }
+
+        .meaning-content {
+            flex: 2;
+            padding: 0 30px;
+        }
+
+        .meaning-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .intro-content { flex-direction: column; }
+            .meaning-item, .meaning-item:nth-child(even) { flex-direction: column; }
+            .meaning-img { max-width: 100%; margin-bottom: 20px; }
+            nav ul { flex-direction: column; text-align: center; }
+            nav ul li { margin-bottom: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="moon"></div> 
+        <h1>Vui Tết Trung Thu</h1>
+        <p>"Thùng thình thùng thình trống rộn ràng ngoài đình..."</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#gioi-thieu">Giới thiệu</a></li>
+            <li><a href="#hoat-dong">Hoạt động</a></li>
+            <li><a href="#banh-trung-thu">Ẩm thực</a></li>
+            <li><a href="#y-nghia">Ý nghĩa</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="gioi-thieu">
+            <h2 class="section-title">Nguồn gốc & Huyền thoại</h2>
+            <div class="intro-content">
+                <div class="intro-img">
+                    <img src="1.jpg" alt="Trăng Rằm">
+                </div>
+                <div class="intro-text">
+                    <p>Tết Trung Thu diễn ra vào ngày Rằm tháng 8 Âm lịch hàng năm. Đây là thời điểm trăng tròn và sáng nhất trong năm. Theo phong tục người Việt, đây là dịp để gia đình sum họp, uống trà thưởng trăng.</p>
+                    <br>
+                    <p>Gắn liền với Trung Thu là những câu chuyện cổ tích như Sự tích Chú Cuội ngồi gốc cây đa hay truyền thuyết về Chị Hằng Nga cung trăng, tạo nên màu sắc lung linh huyền ảo cho ngày Tết trẻ thơ.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="hoat-dong">
+            <h2 class="section-title">Phong tục đặc sắc</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <img src="https://product.hstatic.net/200000305259/product/ruoc-den-trung-thu_8444c9b139034aa5a56d959586119f4e_master.jpg" alt="Rước đèn">
+                    <h3>Rước đèn lồng</h3>
+                    <p>Trẻ em nô nức rước đèn ông sao, đèn cá chép, đi khắp phố phường hòa cùng tiếng trống ếch rộn ràng.</p>
+                </div>
+                <div class="card">
+                    <img src="https://media.vov.vn/sites/default/files/styles/large/public/2022-09/mua_lan.jpg" alt="Múa Lân">
+                    <h3>Múa Lân Sư Rồng</h3>
+                    <p>Tiếng trống thùng thình vang lên, những chú Lân nhảy múa tượng trưng cho sự may mắn, thịnh vượng và xua đuổi tà khí.</p>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.tgdd.vn/Files/2019/08/21/1189445/mam-co-trung-thu-gom-nhung-gi-y-nghia-cua-mam-co-trung-thu-202208151040333333.jpg" alt="Phá cỗ">
+                    <h3>Phá cỗ trông trăng</h3>
+                    <p>Mâm cỗ với bưởi, hồng, na, chuối... được bày biện đẹp mắt. Cả nhà cùng đợi trăng lên cao để "phá cỗ".</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="banh-trung-thu">
+            <h2 class="section-title">Hương vị Trung Thu</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <img src="https://afamilycdn.com/150157425591193600/2021/8/16/cach-lam-banh-nuong-trung-thu-nhan-thap-cam-truyen-thong-thom-ngon-chuan-vi-tai-nha-02-1629107935408287532395.jpg" alt="Bánh Nướng">
+                    <h3>Bánh Nướng</h3>
+                    <p>Lớp vỏ vàng óng ả, thơm lừng mùi bơ trứng. Nhân thập cẩm hoặc đậu xanh đậm đà hương vị truyền thống.</p>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.tgdd.vn/2021/08/CookDish/cach-lam-banh-deo-trung-thu-truyen-thong-nhan-dau-xanh-thap-avt-1200x676.jpg" alt="Bánh Dẻo">
+                    <h3>Bánh Dẻo</h3>
+                    <p>Trắng ngần như ánh trăng, vỏ bánh dẻo thơm mùi nếp và nước hoa bưởi, tượng trưng cho sự trong trẻo.</p>
+                </div>
+                <div class="card">
+                    <img src="https://bizweb.dktcdn.net/100/034/625/files/tra-sen-tay-ho-ngon.jpg?v=1600139180731" alt="Thưởng Trà">
+                    <h3>Trà Sen</h3>
+                    <p>Miếng bánh ngọt phải đi cùng chén trà xanh đắng nhẹ, tạo nên dư vị hài hòa, thanh tao của mùa thu.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="y-nghia">
+            <h2 class="section-title">Ý nghĩa ngày Tết</h2>
+            
+            <div class="meaning-item">
+                <div class="meaning-img">
+                    <img src="https://media.vov.vn/sites/default/files/styles/large/public/2023-09/doan_vien.jpg" alt="Đoàn viên">
+                </div>
+                <div class="meaning-content">
+                    <h3>Tết của Đoàn Viên</h3>
+                    <p>Hình ảnh chiếc bánh tròn và vầng trăng tròn là biểu tượng của sự trọn vẹn, sum vầy. Dù đi đâu xa, ai cũng mong về nhà dịp Rằm tháng 8.</p>
+                </div>
+            </div>
+
+            <div class="meaning-item">
+                <div class="meaning-img">
+                    <img src="https://toquoc.mediacdn.vn/280518851207290880/2022/9/9/220816041846-trung-thu-ha-noi-xua-2-1662711675713210332824.jpg" alt="Văn hóa">
+                </div>
+                <div class="meaning-content">
+                    <h3>Gìn giữ nét đẹp cổ truyền</h3>
+                    <p>Những chiếc đèn ông sao thủ công, mâm ngũ quả hay tiếng trống múa lân là những nét văn hóa đẹp cần được lưu truyền cho thế hệ sau.</p>
+                </div>
+            </div>
+
+            <div class="meaning-item">
+                <div class="meaning-img">
+                    <img src="https://cdn.tgdd.vn/Files/2021/08/18/1376044/tet-trung-thu-la-gi-nguon-goc-va-y-nghia-cua-ngay-tet-trung-thu-202208181050215582.jpg" alt="Trẻ em">
+                </div>
+                <div class="meaning-content">
+                    <h3>Ngày hội của trẻ thơ</h3>
+                    <p>Là dịp để người lớn dành sự quan tâm đặc biệt cho trẻ em, tặng quà, tổ chức vui chơi, khích lệ tinh thần học tập.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Vui Tết Trung Thu - Mùa trăng yêu thương</p>
+    </footer>
+
+</body>
+</html>
