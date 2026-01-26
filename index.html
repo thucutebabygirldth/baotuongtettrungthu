@@ -7,14 +7,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     
     <style>
+        /* --- THIẾT LẬP MÀU SẮC CHỦ ĐẠO (TRUNG THU) --- */
         :root {
-            --primary-color: #0f1c3f; 
-            --accent-color: #ff9800;  
-            --bg-cream: #fffdf5;      
+            --primary-color: #0f1c3f; /* Màu xanh than (bầu trời đêm) */
+            --accent-color: #ff9800;  /* Màu cam vàng (ánh trăng/đèn lồng) */
+            --bg-cream: #fffdf5;      /* Màu kem nền */
             --text-dark: #333;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'Roboto', sans-serif;
@@ -41,48 +46,49 @@
             padding: 0 20px;
         }
 
-        .hero {
-            height: 90vh;
-            background: radial-gradient(circle at center, #1e3c72, #0f1c3f);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
+        /* --- HERO BANNER --- */
+    .hero {
+    height: 90vh;
+    /* Giữ nguyên nền của bạn */
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("2");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
 
-        .moon {
-            width: 120px;
-            height: 120px;
-            background: #ffeb3b;
-            border-radius: 50%;
-            box-shadow: 0 0 40px #ffeb3b, 0 0 80px #ff9800;
-            margin-bottom: 20px;
-            animation: moonGlow 3s infinite alternate;
-        }
+.hero h1 {
+    font-family: 'Dancing Script', cursive;
 
-        @keyframes moonGlow {
-            from { box-shadow: 0 0 20px #ffeb3b, 0 0 40px #ff9800; }
-            to { box-shadow: 0 0 50px #ffeb3b, 0 0 100px #ff9800; transform: scale(1.05); }
-        }
+    font-size: 12rem; 
+    
+    color: #ff9800;
+    /* Làm đổ bóng đậm hơn nữa để chữ cực kỳ nổi bật */
+    text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8), 
+                 0 0 50px rgba(255, 152, 0, 0.6);
+    
+    margin-bottom: 10px;
+    line-height: 1; 
+    letter-spacing: -2px; 
+}
 
-        .hero h1 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 5rem;
-            color: var(--accent-color);
-            text-shadow: 2px 2px 10px rgba(255, 152, 0, 0.5);
-            margin-bottom: 10px;
-        }
 
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 5rem; 
+    }
+}
         .hero p {
             font-size: 1.5rem;
             font-style: italic;
             color: #eee;
         }
 
+       
         nav {
             background-color: var(--primary-color);
             position: sticky;
@@ -99,7 +105,9 @@
             padding: 15px 0;
         }
 
-        nav ul li { margin: 0 20px; }
+        nav ul li {
+            margin: 0 20px;
+        }
 
         nav ul li a {
             text-decoration: none;
@@ -115,7 +123,10 @@
             text-shadow: 0 0 5px var(--accent-color);
         }
 
-        section { padding: 60px 0; }
+     
+        section {
+            padding: 60px 0;
+        }
 
         .section-title {
             text-align: center;
@@ -129,6 +140,7 @@
             padding-bottom: 10px;
             color: var(--primary-color);
         }
+
 
         .intro-content {
             display: flex;
@@ -154,11 +166,6 @@
             gap: 30px;
         }
 
-        /* Tăng chiều cao thẻ card ở phần Hương vị để ảnh trông đẹp hơn */
-        #banh-trung-thu .card {
-            min-height: 480px; 
-        }
-
         .card {
             background: #fff;
             border-radius: 10px;
@@ -167,8 +174,6 @@
             transition: transform 0.3s ease;
             text-align: center;
             border: 1px solid #eee;
-            display: flex;
-            flex-direction: column;
         }
 
         .card:hover {
@@ -177,10 +182,9 @@
         }
 
         .card img {
-            height: 250px; /* Cố định chiều cao ảnh để các card đều nhau */
+            height: 220px;
             width: 100%;
             border-radius: 10px 10px 0 0;
-            object-fit: cover;
         }
 
         .card h3 {
@@ -192,9 +196,9 @@
         .card p {
             padding: 0 15px 20px;
             color: #666;
-            flex-grow: 1; /* Đẩy nội dung lấp đầy khoảng trống */
         }
 
+       
         .meaning-item {
             display: flex;
             margin-bottom: 40px;
@@ -227,6 +231,7 @@
             margin-bottom: 10px;
         }
 
+       
         footer {
             background-color: var(--primary-color);
             color: white;
@@ -236,6 +241,7 @@
             border-top: 4px solid var(--accent-color);
         }
 
+        
         @media (max-width: 768px) {
             .hero h1 { font-size: 3rem; }
             .intro-content { flex-direction: column; }
@@ -249,9 +255,9 @@
 <body>
 
     <header class="hero">
-        <div class="moon"></div> 
-        <h1>Vui Tết Trung Thu</h1>
-        <p>"Thùng thình thùng thình trống rộn ràng ngoài đình..."</p>
+        <h1>Tết Trung Thu</h1><br>
+        <p>"Tết của Tình Thân - Trăng rằm tháng Tám"</p>
+        <p style="margin-top: 15px; color: var(--accent-color);">🌕</p>
     </header>
 
     <nav>
@@ -268,7 +274,7 @@
             <h2 class="section-title">Nguồn gốc & Huyền thoại</h2>
             <div class="intro-content">
                 <div class="intro-img">
-                    <img src="1.jpg" alt="Trăng Rằm">
+                    <img src="https://images.unsplash.com/photo-1538330627046-1147a4d538f5?q=80&w=2069&auto=format&fit=crop" alt="Trăng Rằm">
                 </div>
                 <div class="intro-text">
                     <p>Tết Trung Thu diễn ra vào ngày Rằm tháng 8 Âm lịch hàng năm. Đây là thời điểm trăng tròn và sáng nhất trong năm. Theo phong tục người Việt, đây là dịp để gia đình sum họp, uống trà thưởng trăng.</p>
@@ -356,9 +362,9 @@
     </div>
 
     <footer>
-        <p>&copy; Thực hiện bởi: Nhóm 2 tổ 1</p>
+        <p>&copy; <strong>Thực hiện bởi: Nhóm 2 tổ 1</strong></p>
     </footer>
 
 </body>
-
 </html>
+
