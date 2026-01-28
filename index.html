@@ -49,7 +49,6 @@
         /* --- HERO BANNER --- */
     .hero {
     height: 90vh;
-    /* Giữ nguyên nền của bạn */
     background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("2");
     background-size: cover;
     background-position: center;
@@ -63,14 +62,10 @@
 
 .hero h1 {
     font-family: 'Dancing Script', cursive;
-
     font-size: 12rem; 
-    
     color: #ff9800;
-    /* Làm đổ bóng đậm hơn nữa để chữ cực kỳ nổi bật */
     text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8), 
                  0 0 50px rgba(255, 152, 0, 0.6);
-    
     margin-bottom: 10px;
     line-height: 1; 
     letter-spacing: -2px; 
@@ -231,7 +226,54 @@
             margin-bottom: 10px;
         }
 
-       
+        /* --- CSS MỚI CHO PHẦN LIÊN HỆ --- */
+        .contact-container {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .contact-form, .contact-info {
+            flex: 1;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        .contact-form textarea { height: 120px; resize: none; }
+        .btn-submit {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            transition: 0.3s;
+        }
+        .btn-submit:hover { background-color: #e68a00; }
+        .info-item { margin-bottom: 15px; font-size: 1.1rem; }
+        .info-item strong { color: var(--primary-color); }
+        .map-placeholder {
+            background: #eee;
+            height: 150px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            margin-top: 20px;
+        }
+
         footer {
             background-color: var(--primary-color);
             color: white;
@@ -241,12 +283,12 @@
             border-top: 4px solid var(--accent-color);
         }
 
-        
         @media (max-width: 768px) {
             .hero h1 { font-size: 3rem; }
             .intro-content { flex-direction: column; }
             .meaning-item, .meaning-item:nth-child(even) { flex-direction: column; }
             .meaning-img { max-width: 100%; margin-bottom: 20px; }
+            .contact-container { flex-direction: column; }
             nav ul { flex-direction: column; text-align: center; }
             nav ul li { margin-bottom: 10px; }
         }
@@ -266,6 +308,7 @@
             <li><a href="#hoat-dong">Hoạt động</a></li>
             <li><a href="#banh-trung-thu">Ẩm thực</a></li>
             <li><a href="#y-nghia">Ý nghĩa</a></li>
+            <li><a href="#lien-he">Liên hệ</a></li>
         </ul>
     </nav>
 
@@ -359,6 +402,37 @@
                 </div>
             </div>
         </section>
+
+        <section id="lien-he">
+            <h2 class="section-title">Kết Nối Với Chúng Tôi</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Gửi những lời chúc hoặc thắc mắc của bạn về mùa trăng tròn này nhé!</p>
+            
+            <div class="contact-container">
+                <div class="contact-form">
+                    <input type="text" placeholder="Họ và tên của bạn">
+                    <input type="email" placeholder="Email liên lạc">
+                    <textarea placeholder="Tin nhắn hoặc lời chúc Trung Thu..."></textarea>
+                    <a href="camon.html"><button class="btn-submit">Gửi tin nhắn 🌕</button></a>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Thông tin liên lạc</h3>
+                    <div class="info-item" style="margin-top: 20px;">
+                        📍 <strong>Địa chỉ:</strong> Trường THPT Vinh Xuân, xã Phú Vinh
+                    </div>
+                    <div class="info-item">
+                        📞 <strong>Điện thoại:</strong> 
+                    </div>
+                    <div class="info-item">
+                        ✉️ <strong>Email:</strong> 
+                    </div>
+                    
+                    <div class="map-placeholder">
+                        [ Bản đồ vị trí trường ]
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <footer>
@@ -367,6 +441,7 @@
 
 </body>
 </html>
+
 
 
 
