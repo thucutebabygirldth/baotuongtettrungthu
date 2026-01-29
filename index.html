@@ -292,6 +292,38 @@
             nav ul { flex-direction: column; text-align: center; }
             nav ul li { margin-bottom: 10px; }
         }
+      /* --- CSS CHO VIDEO TỪ MÁY --- */
+        #video-trung-thu {
+            background-color: #fff;
+            padding: 60px 20px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .video-item { text-align: center; }
+        .video-item h3 {
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+        }
+        .video-container-local {
+            width: 100%;
+            border-radius: 12px;
+            border: 3px solid var(--accent-color);
+            overflow: hidden;
+            background: #000;
+        }
+        .video-container-local video {
+            width: 100%;
+            display: block; /* Loại bỏ khoảng trống thừa */
+        }
+        @media (max-width: 768px) { .video-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -308,6 +340,7 @@
             <li><a href="#hoat-dong">Hoạt động</a></li>
             <li><a href="#banh-trung-thu">Ẩm thực</a></li>
             <li><a href="#y-nghia">Ý nghĩa</a></li>
+            <li><a href="#video-trung-thu">Video</a></li>
             <li><a href="#lien-he">Liên hệ</a></li>
         </ul>
     </nav>
@@ -402,6 +435,36 @@
                 </div>
             </div>
         </section>
+       <section id="video-trung-thu">
+            <h2 class="section-title">Tư Liệu Trung Thu</h2>
+            <p style="text-align: center; margin-bottom: 30px; font-style: italic; color: #555;">
+                "Dưới ánh trăng vàng, những câu chuyện xưa nhắc ta biết trân trọng giá trị của sự sum vầy và tình thân."
+            </p>
+            
+            <div class="video-grid">
+                <div class="video-item">
+                    <h3>🥮 Sự Tích Bánh Trung Thu</h3>
+                    <div class="video-container-local">
+                        <video controls poster="anh-nen-1.jpg">
+                            <source src="1.mp4.mp4" type="video/mp4">
+                            Trình duyệt của bạn không hỗ trợ xem video này.
+                        </video>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <h3>🤝 Ý Nghĩa Tết Trung Thu</h3>
+                    <div class="video-container-local">
+                        <video controls poster="anh-nen-2.jpg">
+                            <source src="2.mp4.mp4" type="video/mp4">
+                            Trình duyệt của bạn không hỗ trợ xem video này.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    
 
         <section id="lien-he">
             <h2 class="section-title">Kết Nối Với Chúng Tôi</h2>
@@ -417,9 +480,7 @@
 
                 <div class="contact-info">
                     <h3>Thông tin liên lạc</h3>
-                    <div class="info-item" style="margin-top: 20px;">
-                        📍 <strong>Địa chỉ:</strong> Trường THPT Vinh Xuân, xã Phú Vinh
-                    </div>
+                
                     <div class="info-item">
                         📞 <strong>Điện thoại:</strong> (+84) 363667218
                     </div>
@@ -427,9 +488,22 @@
                         ✉️ <strong>Email:</strong> ngnminhthu2399@gmail.com
                     </div>
                     
-                    <div class="map-placeholder">
-                        [ Bản đồ vị trí trường ]
-                    </div>
+                   <div class="info-item">
+   
+    📍 <strong>Địa chỉ:</strong> Quốc lộ 49B, Vinh Xuân, Phú Vang, Thừa Thiên Huế
+</div>
+
+<div style="width: 100%; margin-top: 20px; overflow: hidden; border-radius: 12px; border: 2px solid var(--accent-color); box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1913.044289226373!2d107.7530112438972!3d16.471051878497995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31419e7cee31fa13%3A0x72eaca184ae9bae6!2zVHLGsOG7nW5nIFRIUFQgVmluaCBYdcOibg!5e0!3m2!1svi!2sus!4v1769693830164!5m2!1svi!2sus"
+        width="100%" 
+        height="350" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
                 </div>
             </div>
         </section>
@@ -441,13 +515,6 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
 
 
 
